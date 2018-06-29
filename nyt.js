@@ -1,34 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <title>Favorite Movies</title>
-  <style type="text/css">
-    button,
-    div,
-    form,
-    input {
-      margin: 10px;
-    }
-  </style>
-</head>
-
-<body>
-
-  <div class="container">
-    <h1>Data</h1>
-
-    <!-- Movies will Get Dumped Here -->
-    <div id="view"></div>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript">
  
  window.onload = function() {
-    $("#search").click(function() {
+    $(".searchButton").click(function() {
         // grab things from the UI into vars
+        var search = $("#searchInput").val();
+        console.log("the data in search box is: " + search);
         // call the callNYT function
     }); 
  }
@@ -57,7 +33,7 @@
         return result;
       }
 
-      callNYT("prince", "20140101", "20161231");
+      // callNYT("prince", "20140101", "20161231");
 
     //     // Creating an AJAX call for the specific movie button being clicked
     //     $.ajax({
@@ -152,8 +128,4 @@
 
     //   // Calling the renderButtons function to display the intial buttons
     //   renderButtons();
-    </script>
-  </div>
-</body>
-
-</html>
+ 
