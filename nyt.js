@@ -7,7 +7,7 @@ $(document).ready(function() {
 
       // make a call to our callNYT function and take the result returned and push it 
       // to the UI
-      callNYT(search, "20120101", "20161231", 7);
+      callNYT(search, "20120101", "20161231", 10);
   }); 
 });
 
