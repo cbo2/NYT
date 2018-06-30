@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  $("#searchButton").click(function() {
+  $("#searchButton").click(function(event) {
+      event.preventDefault();
       // grab things from the UI into vars
       var search = $("#searchInput").val();
       console.log("the data in search box is: " + search);
@@ -38,7 +39,16 @@ function callNYT(queryInfo, beginDate, endDate, limit) {
         list.push(result.response.docs[i].web_url);
       }
       $("#nytResults").text(list.join("\n"));
+      // $("#nytResults").text(format(list));
   }).fail(function(err) {
       throw err;
   });
+}
+
+function format(mylist) {
+  var returnList = [];
+  for (i = 0; i < mylist.length; i++) {
+    returnList.push('<a href="' + mylist[i] + '">' + mylist[i] + "</a>\n");
+  }
+  return returnList;
 }
